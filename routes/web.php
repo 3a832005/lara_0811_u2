@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +66,6 @@ Route::group(['prefix' => 'admin'],function (){
         return 'admin dashboard';
     });
 });
+
+//練習7:將Route的內容搬至Controller內
+Route::get('home',[HomeController::class,'index'])->name('home.index');
