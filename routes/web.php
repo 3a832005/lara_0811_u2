@@ -38,7 +38,7 @@ Route::get('hello/{name}',function ($name){
     return 'Hello, '.$name;
 });
 
-/*練習2:修改參數成選擇性
+/*練習2:設定參數成選擇性
 Route::get('hello/{name?}',function ($name='Everybody'){
     return'Hello, '.$name;
 });
@@ -53,3 +53,15 @@ Route::get('welcome/{name}',function ($name){
 Route::get('hello/{name?}',function ($name='Everybody'){
     return'Hello, '.$name;
 })->name('hello.index');
+
+//練習5:設定dashboard路徑的Route
+Route::get('dashboard',function (){
+    return'dashboard';
+});
+
+//練習5:設定另一個Route以群組包起來設定prefix
+Route::group(['prefix' => 'admin'],function (){
+    Route::get('dashboard',function (){
+        return 'admin dashboard';
+    });
+});
