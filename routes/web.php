@@ -34,26 +34,20 @@ Route::get('r2',function (){
     return view('welcome');
 });
 
-//練習2:設定Route接受參數
+/*練習2:設定Route接受參數
 Route::get('hello/{name}',function ($name){
     return 'Hello, '.$name;
 });
-
-/*練習2:設定參數成選擇性
+*/
+//練習2:設定參數成選擇性
 Route::get('hello/{name?}',function ($name='Everybody'){
     return'Hello, '.$name;
-});
-*/
+})->name('hello.index');      //練習4:為Route命名(將練習2的路由命名為hello.index)
 
 //練習3:測試artisan指令新增route
 Route::get('welcome/{name}',function ($name){
     return 'welcome, '.$name;
 });
-
-//練習4:為Route命名
-Route::get('hello/{name?}',function ($name='Everybody'){
-    return'Hello, '.$name;
-})->name('hello.index');
 
 //練習5:設定dashboard路徑的Route
 Route::get('dashboard',function (){
